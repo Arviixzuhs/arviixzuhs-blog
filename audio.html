@@ -42,6 +42,7 @@
         display: flex;
         position: relative;
         flex-direction: column;
+        justify-content: space-between;
       }
       .radioProgress {
         gap: 15px;
@@ -69,13 +70,17 @@
       .radioButton {
         cursor: pointer;
       }
+      #volumenIcon {
+        font-size: 18px;
+      }
       .popup {
-        top: -40px;
+        top: -55px;
         gap: 15px;
         right: 0px;
         display: flex;
         opacity: 0;
         padding: 10px;
+        z-index: 50;
         position: absolute;
         transition: opacity 300ms ease;
         align-items: center;
@@ -85,10 +90,17 @@
       .popup.active {
         opacity: 1;
       }
-      #moreIcon,
-      #prev,
-      #next {
-        cursor: pointer;
+      .radioButton {
+        padding: 5px;
+        font-size: 25px;
+        transition: all 0.3s ease;
+        border-radius: 100%;
+      }
+      .radioButton:hover {
+        background-color: rgba(58, 57, 57, 0.11);
+      }
+      .radioButton:active {
+        transform: scale(0.9);
       }
       @media (max-width: 378px) {
         .radioContainer {
@@ -109,7 +121,7 @@
             <div>
               <div class="radioHeader">
                 <h4>Daily mix</h4>
-                <i class="bx bx-dots-horizontal-rounded" id="moreIcon"></i>
+                <i class="radioButton bx bx-dots-horizontal-rounded" id="moreIcon"></i>
               </div>
               <span id="musictLength"></span>
             </div>
@@ -125,7 +137,7 @@
             <div class="radioControls">
               <i id="prev" class="radioButton bx bx-skip-previous"></i>
               <i id="playPause" class="radioButton bx bx-play"></i>
-              <i id="next" class="bx bx-skip-next"></i>
+              <i id="next" class="radioButton bx bx-skip-next"></i>
             </div>
           </div>
         </div>
