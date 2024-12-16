@@ -106,11 +106,10 @@
     const playPauseVideo = () => {
       if (video.paused) {
         video.play()
-        toggleIcon()
       } else {
         video.pause()
-        toggleIcon()
       }
+      toggleIcon()
     }
 
     const changeProgressColor = (percentage, element) => {
